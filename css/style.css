@@ -71,7 +71,7 @@ footer a:visited{
 /*****  End Starter Code ****/
 
 /* Requirement 1 code here*/
-nav a:link{
+nav a{
   text-decoration:none;
 }
 /* Requirement 2 code here*/
@@ -88,28 +88,28 @@ a.skip{
   z-index: 1;
   /* Requirement 3 code here*/
   left: -500px;
+  position: absolute;
 }
 
 
 /* Requirement 4 code here*/
-nav a:focus{
-  border-top: 2px yellow;
-  text-decoration: none;
+a:focus{
+  border-top: 2px solid yellow;
+  outline: none;
 }
 
 .container{
   /* Requirement 5 code here*/
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  grid-template-rows: auto;
   row-gap: 30px;
 }
 
 /* Requirements 6-10 here: */
 .intro{
-  background-image: url("/images/header.jpg");
+  background-image: url("../images/header.jpg");
   min-height: 400px;
-  fallback: #DDDDDD;
+  background-color: #DDDDDD;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -117,8 +117,8 @@ nav a:focus{
 }
 
 .about, .clients, .method, .contact{
-  grid-column-start: 2;
-  overflow: hidden;
+  grid-column: 2;
+  
 }
 img{
   width:100%;
@@ -132,7 +132,7 @@ img{
 }
 
 .text{
-  position: center;
+  align-self: center;
   overflow: scroll;
   height: 25vmax;
 }
@@ -143,7 +143,7 @@ img{
   nav{
     padding-top: 35px;
     /*Requirement 11*/
-
+    text-align: right;
   }
 
   nav li{
@@ -153,9 +153,24 @@ img{
 
   
   /* Requirements 12-15 here: */
+  a.skip:focus {
+    left: 0px;
+    top: 20px;
+  }
 
-}
+  .container{
+    display:grid;
+    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-rows: repeat(4, 300px);
 
+  }
+  .about, .method, .clients-image, .contact-image{
+    grid-column: 3 / span 2;
+  }
+
+  .clients, .contact, .about-image, .method-image{
+    grid-column: 2 / span 2;
+  }
 
 
 
@@ -181,4 +196,3 @@ img{
   .intro{
     background-attachment: initial;
   }
-}
