@@ -71,9 +71,13 @@ footer a:visited{
 /*****  End Starter Code ****/
 
 /* Requirement 1 code here*/
-
+nav a:link{
+  text-decoration:none;
+}
 /* Requirement 2 code here*/
-
+nav a:hover{
+  text-decoration-style: wavy;
+}
 
 
 a.skip{
@@ -83,22 +87,41 @@ a.skip{
   transition: left 1s ease-out;
   z-index: 1;
   /* Requirement 3 code here*/
-  
+  left: -500px;
 }
 
 
 /* Requirement 4 code here*/
-
+nav a:focus{
+  border-top: 2px yellow;
+  text-decoration: none;
+}
 
 .container{
   /* Requirement 5 code here*/
-
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: auto;
+  row-gap: 30px;
 }
 
 /* Requirements 6-10 here: */
+.intro{
+  background-image: url("/images/header.jpg");
+  min-height: 400px;
+  background-color: #DDDDDD;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-
-
+.about, .clients, .method, .contact{
+  grid-column-start: 2;
+}
+img{
+  width:100%;
+}
 @media screen and (min-width: 700px){
   nav{
     padding-top: 35px;
