@@ -109,7 +109,7 @@ nav a:focus{
 .intro{
   background-image: url("/images/header.jpg");
   min-height: 400px;
-  background-color: #DDDDDD;
+  fallback: #DDDDDD;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -118,10 +118,27 @@ nav a:focus{
 
 .about, .clients, .method, .contact{
   grid-column-start: 2;
+  overflow: hidden;
 }
 img{
   width:100%;
 }
+
+.about-image, .clients-image, .method-image, .contact-image{
+  grid-column-start: 1 / span 4;
+  max-height: 500px;
+  position: relative;
+  transform: translateY(-50%);
+}
+
+.text{
+  position: center;
+  overflow: scroll;
+  height: 25vmax;
+}
+
+
+
 @media screen and (min-width: 700px){
   nav{
     padding-top: 35px;
