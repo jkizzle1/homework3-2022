@@ -94,7 +94,7 @@ a.skip{
 
 
 /* Requirement 4 code here*/
-a:focus{
+nav a:focus{
   border-top: 2px solid yellow;
   outline: none;
 }
@@ -108,9 +108,9 @@ a:focus{
 
 /* Requirements 6-10 here: */
 .intro{
+  background-color: #DDDDDD;
   background-image: url("../images/header.jpg");
   min-height: 400px;
-  background-color: #DDDDDD;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -126,15 +126,26 @@ img{
 }
 
 .about-image, .clients-image, .method-image, .contact-image{
-  grid-column-start: 1 / 4;
+  grid-column-start: 1 / span 3;
   max-height: 500px;
   overflow: hidden;
 }
-
+.about, .about-image{
+  grid-row: 1 / 2;
+}
+.clients, .clients-image{
+  grid-row: 2 / 3; 
+}
+.method, .method-image{
+  grid-row: 3 / 4;
+}
+.contact, .contact-image{
+  grid-row: 4 / 5;
+}
 .text{
   align-self: center;
+  max-height: 25vh;
   overflow: scroll;
-  height: 25vmax;
 }
 
 
@@ -153,7 +164,8 @@ img{
 
   
   /* Requirements 12-15 here: */
-  a.skip:focus {
+  .skip:focus {
+    text-align: left;
     left: 0px;
     top: 20px;
   }
